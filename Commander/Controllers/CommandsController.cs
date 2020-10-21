@@ -26,7 +26,13 @@ namespace Commander.Controllers{
 
         //GET api/commands/{id}
         [HttpGet("{id}")]
-        public ActionResult <Command> GetCommandById(int id){
+        public ActionResult <Command> GetCommandById(int id)
+        {
+            // Peki bu end point'in içine  
+            // id nereden geliyor? Request'ten geliyor.
+            // URI'dan geliyor.
+            var commandItem = _repository.GetCommandById(id);
+            return Ok(commandItem);
         }        
     }
 }  
