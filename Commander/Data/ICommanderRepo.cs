@@ -3,6 +3,10 @@ using Commander.Models;
 
 namespace Commander.Data{
     public interface ICommanderRepo{
-        IEnumerable<Command> GetAllCommands{get;set;}
+        // Tüm command'leri dönder.
+        IEnumerable<Command> GetAllCommands();
+
+        // Id'ye göre command objesi dönder.
+        Command GetCommandById(int id);
     }
 }

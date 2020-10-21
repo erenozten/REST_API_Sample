@@ -15,6 +15,7 @@ namespace Commander.Controllers{
         //GET api/commands
         [HttpGet]
         public ActionResult <IEnumerable<Command>> GetAllCommands(){
+        
         var commandItems = _repository.GetAllCommands();
 
         // return'e dikkat: 
@@ -28,7 +29,7 @@ namespace Commander.Controllers{
         [HttpGet("{id}")]
         public ActionResult <Command> GetCommandById(int id)
         {
-            // Peki bu end point'in içine  
+            // Peki bu end point'in içine   
             // id nereden geliyor? Request'ten geliyor.
             // URI'dan geliyor.
             var commandItem = _repository.GetCommandById(id);

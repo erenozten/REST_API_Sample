@@ -1,3 +1,4 @@
+
 using System.Collections.Generic;
 using Commander.Models;
 
@@ -14,7 +15,7 @@ namespace Commander.Data{
             return commands;
         }
         public Command GetCommandById(int id){
-            return new Command(){Id=0, HowTo="", Line="q", Platform="we"};
+            return new Command(){Id=id, HowTo="", Line="q", Platform="we"};
         }
     }
 }
