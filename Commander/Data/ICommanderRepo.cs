@@ -8,5 +8,7 @@ namespace Commander.Data{
 
         // Id'ye göre command objesi dönder.
         Command GetCommandById(int id);
+
+        
     }
 }
