@@ -6,10 +6,10 @@ namespace Commander.Data{
     public class MockCommanderRepo : ICommanderRepo{
 
         List<Command> commands = new List<Command>(){
-            new Command(){Id=0, HowTo="HowTo1", Line="Line1", Platform="Platform1"},
-            new Command(){Id=1, HowTo="HowTo2", Line="Line2", Platform="Platform2"},
-            new Command(){Id=2, HowTo="HowTo3", Line="Line3", Platform="Platform3"},
-            new Command(){Id=0, HowTo="HowTo4", Line="Line4", Platform="Platform4"}
+            new Command(){Id=1, HowTo="HowTo1", Line="Line1", Platform="Platform1"},
+            new Command(){Id=2, HowTo="HowTo2", Line="Line2", Platform="Platform2"},
+            new Command(){Id=3, HowTo="HowTo3", Line="Line3", Platform="Platform3"},
+            new Command(){Id=4, HowTo="HowTo4", Line="Line4", Platform="Platform4"}
         };
 
         public IEnumerable<Command> GetAllCommands()
