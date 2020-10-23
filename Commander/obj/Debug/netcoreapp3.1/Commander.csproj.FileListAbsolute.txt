@@ -59,3 +59,5 @@ C:\Users\Primal Shade\source\repos\REST_API_Sample\Commander\bin\Debug\netcoreap
 C:\Users\Primal Shade\source\repos\REST_API_Sample\Commander\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Primal Shade\source\repos\REST_API_Sample\Commander\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Primal Shade\source\repos\REST_API_Sample\Commander\obj\Debug\netcoreapp3.1\Commander.csproj.CopyComplete
+C:\Users\Primal Shade\source\repos\REST_API_Sample\Commander\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Primal Shade\source\repos\REST_API_Sample\Commander\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
