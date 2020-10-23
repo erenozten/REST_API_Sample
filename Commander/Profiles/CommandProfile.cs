@@ -10,6 +10,7 @@ namespace Commander.Profiles
             // Source -> Target
             // Yani: Veriyi DB'den okuyoruz ve client'a DTO olarak dönüyoruz...
             CreateMap<Command,CommandReadDto>();
+            CreateMap<CommandCreateDto,Command>();
             CreateMap<CommandCreateDto,CommandReadDto>();
         }
     }
