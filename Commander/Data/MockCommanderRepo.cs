@@ -12,6 +12,11 @@ namespace Commander.Data{
             new Command(){Id=4, HowTo="HowTo4", Line="Line4", Platform="Platform4"}
         };
 
+        public void CreateCommand(Command command)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Command> GetAllCommands()
         {
             return commands;
@@ -21,6 +26,11 @@ namespace Commander.Data{
         {
             var command = commands.Find(n=>n.Id == id);
             return command;
+        }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
