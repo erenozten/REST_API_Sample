@@ -53,8 +53,8 @@ namespace Commander.Controllers{
         }
 
         //GET api/commands/{id}
-        [HttpGet("{id}")]
-        public ActionResult <Command> GetCommandById(int id)
+        [HttpGet("{id}", Name ="GetCommandById")]
+        public ActionResult <CommandReadDto> GetCommandById(int id)
         {
             // Peki bu end point'in içine   
             // id nereden geliyor? Request'ten geliyor.
@@ -65,7 +65,7 @@ namespace Commander.Controllers{
                 return Ok(_mapper.Map<CommandReadDto>(commandItem));
             }
             return NotFound();
-        }      
+        }
 
         // public void CreateCommand(Command cmd){
         //     if(cmd == null){
@@ -73,7 +73,7 @@ namespace Commander.Controllers{
         //     }
         // }
 
-        [HttpPost]
+        [HttpPost]  
         public ActionResult <CommandReadDto> CreateCommand(CommandCreateDto commandCreateDto){
 
             // commandCreateDto'yu Command'a dönüştürüyoruz aşağıda:
@@ -81,10 +81,21 @@ namespace Commander.Controllers{
             var commandModel = _mapper.Map<Command>(commandCreateDto);
             // Akılda kalması açısından: 
             _repository.CreateCommand(commandModel);
-            _repository.SaveChanges();
-            var commandReadDto = _mapper.Map<CommandReadDto>(commandCreateDto);
-             return Ok(commandReadDto);
 
+            // Şu an commandModel objesi istediğimiz değerlere sahip
+            // ama db'ye kaydedilmediği için Id = 0 şu an.
+            // Aşağıdaki SaveChanges metodunu çağırdığımızda;
+            // commandModel'in Id değeri artık 0 olmuyor. Db'ye kaydedilen objenin
+            // id değeri commandModel'e yapıştırılıyor.
+            // O yüzden return metodundaki new{id = commandReadDto.Id değeri 0 gelmiyor!}
+            _repository.SaveChanges(); 
+            var commandReadDto = _mapper.Map<CommandReadDto>(commandModel);
+
+            // oluşturduğumuz data'nın verilerini return ediyoruz
+            // gerekli bir işlem değil. Ama daha iyi bir yol...
+            return CreatedAtRoute(nameof(GetCommandById), 
+            new {Id = commandReadDto.Id}, commandReadDto); 
+             //return Ok(commandReadDto);
         }  
     }
 }  
